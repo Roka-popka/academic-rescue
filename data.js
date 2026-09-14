@@ -18,7 +18,8 @@ const students = [
   },
   {
     id: 's3', name: 'Alina',
-    gradesByCourse: { 'Database Systems': [80, 82, 84, 83, 84], 'Программирование': [82, 83, 84, 85, 86] },
+    // Demo: steady decline while the current risk remains LOW.
+    gradesByCourse: { 'Database Systems': [88, 84, 80, 76, 72], 'Программирование': [82, 83, 84, 85, 86] },
     attendanceByCourse: { 'Database Systems': 35, 'Программирование': 40 },
     missedDeadlines: { 'Database Systems': 0, 'Программирование': 0 },
     weakTopics: { 'Database Systems': [], 'Программирование': [] },
@@ -43,4 +44,6 @@ const courseMaterials = [
 // Эти записи исчезнут после завершения программы.
 const notifications = [];
 const followUps = [];
-module.exports = { students, courseMaterials, notifications, followUps };
+students.forEach((student) => { student.interventionHistory = []; });
+const screenings = {};
+module.exports = { students, courseMaterials, notifications, followUps, screenings };

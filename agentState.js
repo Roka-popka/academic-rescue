@@ -3,6 +3,9 @@ function createAgentState(goal) {
   return {
     goal,
     step: 0,
+    currentWeek: 5,
+    screenings: {},
+    followUpResults: [],
     knownStudents: null,
     analyzedStudents: [],
     toolResults: [],
